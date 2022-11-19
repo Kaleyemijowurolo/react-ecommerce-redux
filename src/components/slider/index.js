@@ -1,8 +1,8 @@
 import React from "react";
 import SliderCard from "./card";
 import { SliderWrapper } from "./slider.styles";
-import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
-import { colors } from "../../lib/colors";
+// import { HiArrowLongLeft, HiArrowLongRight } from "react-icons/hi2";
+// import { colors } from "../../lib/colors";
 import { ReactComponent as LeftArrow } from "./arrow/left_arrow.svg";
 import { ReactComponent as RightArrow } from "./arrow/right_arrow.svg";
 const sliderArray = [
