@@ -5,6 +5,7 @@ import { colors } from "./lib/colors";
 import Slider from "./components/slider";
 import Footer from "./components/footer";
 import HorizontalLine from "./components/divider";
+import Products from "./components/products";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <div className="container">
           <Slider />
           <HorizontalLine />
+          <Products />
         </div>
         <Footer />
       </AppWrapper>

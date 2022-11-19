@@ -34,11 +34,17 @@ const sliderArray = [
 const Slider = () => {
   return (
     <SliderWrapper>
-      <LeftArrow title={"Back"} className={"left_arrow"} />
-      {sliderArray.map(({ text, image }, idx) => (
-        <SliderCard bgImg={image} title={text} key={idx} />
-      ))}
-      <RightArrow title="Next" className={"right_arrow"} />
+      <div className="container">
+        <div className={"left_arrow"}>
+          <LeftArrow title={"Back"} />
+        </div>
+        {sliderArray.map(({ text, image }, idx) => (
+          <SliderCard bgImg={image} title={text} key={idx} />
+        ))}
+        <div className={"right_arrow"}>
+          <RightArrow title="Next" className={"right_arrow"} />
+        </div>
+      </div>
     </SliderWrapper>
   );
 };
