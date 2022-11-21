@@ -41,7 +41,11 @@ const Products = () => {
               </ProductImageBox>
               <p>{productName}</p>
               {buttonText === "Sale" && <p>{preRent}</p>}
-              <h3>{rent}</h3>
+              {buttonText === "Sale" ? (
+                <h3 className="h3">{rent}</h3>
+              ) : (
+                <h3>{rent}</h3>
+              )}
             </ProductBox>
           )
         )}

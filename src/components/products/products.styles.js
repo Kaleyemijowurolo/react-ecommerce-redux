@@ -16,12 +16,13 @@ export const ProductBoxWrapper = styled.div`
   min-height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 15px 10px;
 `;
 export const ProductBox = styled.div`
   width: 285px;
   overflow: hidden;
   height: max-content;
+  margin: 5px 0;
 
   p {
     /* margin: 1rem 0 !important; */
@@ -47,6 +48,15 @@ export const ProductBox = styled.div`
     font-size: 16px;
     line-height: 22px;
     font-weight: 700;
+  }
+
+  .h3 {
+    background: linear-gradient(107.73deg, #d81f5a 0%, #8438bf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: "400";
   }
 `;
 export const ProductImageBox = styled.div`

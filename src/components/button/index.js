@@ -16,9 +16,9 @@ const Button = ({
     </SecondaryButtonWrapper>
   ) : alternate ? (
     <AlternateButtonWrapper>
-      <CustomButton>
+      <AlternateButton>
         <span>{buttonText}</span>{" "}
-      </CustomButton>
+      </AlternateButton>
     </AlternateButtonWrapper>
   ) : (
     <PrimaryButton fullwitdth={fullwitdth}>{buttonText}</PrimaryButton>
@@ -63,7 +63,7 @@ const AlternateButtonWrapper = styled(PrimaryButton)`
   border-radius: 60px;
 `;
 
-export const CustomButton = styled("button")`
+export const AlternateButton = styled("button")`
   width: 100%;
   height: 100%;
   border: none;
