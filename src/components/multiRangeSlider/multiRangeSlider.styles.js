@@ -106,22 +106,7 @@ export const RangeWrapper = styled.div`
 
   .thumb--right {
     z-index: 4;
-    /* &::before {
-      content: "";
-     
-
-      width: 12px;
-      height: 12px;
-      position: absolute;
-      top: -1rem;
-      color: red;
-      transform: ${({ newRange, step }) => `translateX(${newRange * step}px)`};
-      z-index: 9999;
-      background-color: red;
-      border-radius: 50%;
-      top: 0;
-      left: 11.6%;
-    } */
+   
   }
 
   /* For Chrome browsers */

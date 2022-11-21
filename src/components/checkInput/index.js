@@ -25,6 +25,7 @@ const CheckInput = ({
       name={name}
       size={size}
       {...props}
+      // isChecked={checked}
       checked={isChecked}
     />
   );
