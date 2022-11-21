@@ -4,20 +4,19 @@ import styled from "styled-components";
 export const ProductsWraper = styled.div`
   width: 100%;
   display: flex;
-  border: solid red;
   min-height: 100vh;
   justify-content: space-between;
 `;
 export const SideBar = styled.aside`
-  width: 20%;
+  flex-basis: 20%;
   min-height: 100%;
-  border: solid blue;
 `;
-export const ProductBoxWrapper = styled.section`
-  flex: 1;
-  width: 15%;
+export const ProductBoxWrapper = styled.div`
+  flex-basis: 75%;
   min-height: 100%;
-  border: solid yellow;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 `;
 export const ProductBox = styled.div`
   width: 285px;
@@ -30,7 +29,17 @@ export const ProductBox = styled.div`
     font-size: 14px;
     font-weight: 500;
     line-height: 19px;
+    &:nth-child(3) {
+      font-family: "Inter";
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      /* identical to box height */
+      text-decoration-line: line-through;
+      color: #000000;
+    }
   }
+
   h3 {
     margin: 0;
     padding: 0;
@@ -61,5 +70,7 @@ export const ProductImageBox = styled.div`
 export const Image = styled.img`
   width: 165px;
   height: 210px;
-  border: solid red;
+  overflow: hidden;
+  background: transparent;
+  /* border: solid red; */
 `;

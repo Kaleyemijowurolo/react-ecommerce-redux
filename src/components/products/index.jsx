@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { colors } from "../../lib/colors";
-import { CustomButton } from "../button";
+import Button, { CustomButton } from "../button";
 import CheckInput from "../checkInput";
 import Filter from "../filter";
 import MultiRangeSlider from "../multiRangeSlider/MultiRangeSlider";
 import { Title } from "../multiRangeSlider/multiRangeSlider.styles";
-import Slider from "../slider";
-//import Slider from "../slider2/Slider";
 import {
   Image,
   ProductBox,
@@ -16,15 +14,6 @@ import {
   ProductsWraper,
   SideBar,
 } from "./products.styles";
-
-const products = [
-  {
-    buttonText: "",
-    imgUrl: "",
-    productName: "",
-    rent: "",
-  },
-];
 
 const Products = () => {
   return (
@@ -39,18 +28,23 @@ const Products = () => {
         <Brands />
       </SideBar>
       <ProductBoxWrapper>
-        <ProductBox>
-          <ProductImageBox>
-            <div className="btn">
-              <CustomButton>
-                <span>Special Offer</span>
-              </CustomButton>
-            </div>
-            <Image></Image>
-          </ProductImageBox>
-          <p>Apple iPhone 13 Pro Max </p>
-          <h3>Rent for AED 139/month</h3>
-        </ProductBox>
+        {products.map(
+          ({ buttonText, imgUrl, productName, rent, preRent }, idx) => (
+            <ProductBox key={idx}>
+              <ProductImageBox>
+                {buttonText !== "" && (
+                  <div className="btn">
+                    <Button alternate buttonText={buttonText} />
+                  </div>
+                )}
+                <Image src={imgUrl} alt="product-image" />
+              </ProductImageBox>
+              <p>{productName}</p>
+              {buttonText === "Sale" && <p>{preRent}</p>}
+              <h3>{rent}</h3>
+            </ProductBox>
+          )
+        )}
       </ProductBoxWrapper>
     </ProductsWraper>
   );
@@ -144,3 +138,135 @@ export const Ul = styled.ul`
     }
   }
 `;
+const products = [
+  {
+    buttonText: "Special Offer",
+    imgUrl: "/image1.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: "Apple iPhone 13 Pro Max",
+  },
+  {
+    buttonText: "Sale",
+    imgUrl: "/image3.svg",
+    preRent: "AED 339 / month",
+    rent: "Rent for AED 139 / month",
+    productName: "Microsoft Xbox Series S",
+  },
+  {
+    buttonText: "Sale",
+    imgUrl: "/image2.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: 'MacBook Pro 14" Laptop',
+  },
+  {
+    buttonText: "Special Offer",
+    imgUrl: "/image1.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: "Apple iPhone 13 Pro Max ",
+  },
+
+  {
+    buttonText: "",
+    imgUrl: "/image2.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: 'MacBook Pro 14" Laptop',
+  },
+  {
+    buttonText: "Sale",
+    imgUrl: "/image3.svg",
+    preRent: "AED 339 / month",
+    rent: "Rent for AED 139 / month",
+    productName: "Microsoft Xbox Series S",
+  },
+  {
+    buttonText: "",
+    imgUrl: "/image1.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: "Apple iPhone 13 Pro Max ",
+  },
+
+  {
+    buttonText: "Sale",
+    imgUrl: "/image2.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: 'MacBook Pro 14" Laptop',
+  },
+  {
+    buttonText: "",
+    imgUrl: "/image3.svg",
+    preRent: "AED 339 / month",
+    rent: "Rent for AED 139 / month",
+    productName: "Microsoft Xbox Series S",
+  },
+  {
+    buttonText: "",
+    imgUrl: "/image1.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: "Apple iPhone 13 Pro Max ",
+  },
+  {
+    buttonText: "Sale",
+    imgUrl: "/image3.svg",
+    preRent: "AED 339 / month",
+    rent: "Rent for AED 139 / month",
+    productName: "Microsoft Xbox Series S",
+  },
+
+  {
+    buttonText: "",
+    imgUrl: "/image1.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: "Apple iPhone 13 Pro Max ",
+  },
+  {
+    buttonText: "Sale",
+    imgUrl: "/image2.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: 'MacBook Pro 14" Laptop',
+  },
+  {
+    buttonText: "",
+    imgUrl: "/image3.svg",
+    preRent: "AED 339 / month",
+    rent: "Rent for AED 139 / month",
+    productName: "Microsoft Xbox Series S",
+  },
+
+  {
+    buttonText: "Special Offer",
+    imgUrl: "/image1.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: "Apple iPhone 13 Pro Max ",
+  },
+  {
+    buttonText: "",
+    imgUrl: "/image3.svg",
+    preRent: "AED 339 / month",
+    rent: "Rent for AED 139 / month",
+    productName: "Microsoft Xbox Series S",
+  },
+  {
+    buttonText: "Sale",
+    imgUrl: "/image2.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: 'MacBook Pro 14" Laptop',
+  },
+  {
+    buttonText: "Sale",
+    imgUrl: "/image2.svg",
+    preRent: "",
+    rent: "Rent for AED 139/month",
+    productName: 'MacBook Pro 14" Laptop',
+  },
+];
