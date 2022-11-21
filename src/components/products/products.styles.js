@@ -12,20 +12,57 @@ export const SideBar = styled.aside`
   min-height: 100%;
 `;
 export const ProductBoxWrapper = styled.div`
+  height: 100%;
   flex-basis: 75%;
-  min-height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px 10px;
+
+  .heading {
+    height: 100px;
+    display: flex column;
+    justify-content: space-between;
+
+    .title {
+      display: flex;
+      margin-bottom: 10px;
+      align-items: center;
+      justify-content: space-between;
+
+      h3 {
+        margin: 0;
+        color: #000000;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 33px;
+      }
+
+      span {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 19px;
+        color: #4f4f4f;
+      }
+    }
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px 10px;
+  }
+
+  .more-btn {
+    margin: 2rem 0;
+    text-align: center;
+  }
 `;
 export const ProductBox = styled.div`
   width: 285px;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: max-content;
   margin: 5px 0;
 
   p {
-    /* margin: 1rem 0 !important; */
     color: #4f4f4f;
     font-size: 14px;
     font-weight: 500;
@@ -62,12 +99,29 @@ export const ProductBox = styled.div`
 export const ProductImageBox = styled.div`
   width: 285px;
   height: 285px;
-  display: flex;
-  background: #f2f2f2;
-  align-items: center;
+  padding: 1px;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  position: relative;
+  border: none;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    background: linear-gradient(107.73deg, #d81f5a 0%, #8438bf 100%);
+  }
+
+  .PIB-wrapper {
+    height: 100%;
+    width: 100%;
+    border: none;
+    display: flex;
+    background: #f2f2f2;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    position: relative;
+  }
 
   .btn {
     position: absolute;
@@ -82,5 +136,4 @@ export const Image = styled.img`
   height: 210px;
   overflow: hidden;
   background: transparent;
-  /* border: solid red; */
 `;

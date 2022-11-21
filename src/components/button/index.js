@@ -49,16 +49,20 @@ const SecondaryButton = styled(PrimaryButton)`
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
+    border: none;
   }
 `;
 const SecondaryButtonWrapper = styled(PrimaryButton)`
   padding: 1px;
+  border: none;
+
   background: linear-gradient(107.73deg, #d81f5a 0%, #8438bf 100%);
 `;
 const AlternateButtonWrapper = styled(PrimaryButton)`
   padding: 1px;
   width: max-content;
   height: max-content;
+  border: none;
   background: linear-gradient(107.73deg, #d81f5a 0%, #8438bf 100%);
   border-radius: 60px;
 `;

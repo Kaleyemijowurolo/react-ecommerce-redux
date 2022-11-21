@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+
 import { colors } from "../../lib/colors";
-import Button, { CustomButton } from "../button";
+import Button from "../button";
 import CheckInput from "../checkInput";
 import Filter from "../filter";
 import MultiRangeSlider from "../multiRangeSlider/MultiRangeSlider";
@@ -28,27 +29,41 @@ const Products = () => {
         <Brands />
       </SideBar>
       <ProductBoxWrapper>
-        {products.map(
-          ({ buttonText, imgUrl, productName, rent, preRent }, idx) => (
-            <ProductBox key={idx}>
-              <ProductImageBox>
-                {buttonText !== "" && (
-                  <div className="btn">
-                    <Button alternate buttonText={buttonText} />
+        <div className="heading">
+          <div className="title">
+            <h3>Computers</h3>
+            <span>Sort by</span>
+          </div>
+          <span>Seo text will be here</span>
+        </div>
+        <div className="container">
+          {products.map(
+            ({ buttonText, imgUrl, productName, rent, preRent }, idx) => (
+              <ProductBox key={idx}>
+                <ProductImageBox>
+                  <div className="PIB-wrapper">
+                    {buttonText !== "" && (
+                      <div className="btn">
+                        <Button alternate buttonText={buttonText} />
+                      </div>
+                    )}
+                    <Image src={imgUrl} alt="product-image" />
                   </div>
+                </ProductImageBox>
+                <p>{productName}</p>
+                {buttonText === "Sale" && <p>{preRent}</p>}
+                {buttonText === "Sale" ? (
+                  <h3 className="h3">{rent}</h3>
+                ) : (
+                  <h3>{rent}</h3>
                 )}
-                <Image src={imgUrl} alt="product-image" />
-              </ProductImageBox>
-              <p>{productName}</p>
-              {buttonText === "Sale" && <p>{preRent}</p>}
-              {buttonText === "Sale" ? (
-                <h3 className="h3">{rent}</h3>
-              ) : (
-                <h3>{rent}</h3>
-              )}
-            </ProductBox>
-          )
-        )}
+              </ProductBox>
+            )
+          )}
+        </div>
+        <div className="more-btn">
+          <Button secondary buttonText="Load more products" />
+        </div>
       </ProductBoxWrapper>
     </ProductsWraper>
   );
@@ -160,7 +175,7 @@ const products = [
   {
     buttonText: "Sale",
     imgUrl: "/image2.svg",
-    preRent: "",
+    preRent: "AED 339 / month",
     rent: "Rent for AED 139/month",
     productName: 'MacBook Pro 14" Laptop',
   },
@@ -197,7 +212,7 @@ const products = [
   {
     buttonText: "Sale",
     imgUrl: "/image2.svg",
-    preRent: "",
+    preRent: "AED 339 / month",
     rent: "Rent for AED 139/month",
     productName: 'MacBook Pro 14" Laptop',
   },
@@ -262,14 +277,14 @@ const products = [
   {
     buttonText: "Sale",
     imgUrl: "/image2.svg",
-    preRent: "",
+    preRent: "AED 339 / month",
     rent: "Rent for AED 139/month",
     productName: 'MacBook Pro 14" Laptop',
   },
   {
     buttonText: "Sale",
     imgUrl: "/image2.svg",
-    preRent: "",
+    preRent: "AED 339 / month",
     rent: "Rent for AED 139/month",
     productName: 'MacBook Pro 14" Laptop',
   },
